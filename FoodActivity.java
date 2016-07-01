@@ -5,21 +5,20 @@ import android.os.Bundle;
 import android.widget.ImageView;
 import android.widget.TextView;
 
-public class DrinkActivity extends AppCompatActivity {
-    public static final String EXTRA_DRINKNO = "drinkNo";
+public class FoodActivity extends AppCompatActivity {
+    public static final String EXTRA_FOODNO = "foodNo";
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_drink);
-        long drinkno=(int)(getIntent().getExtras().get(EXTRA_DRINKNO));
-        Drink drink=Drink.drinks[(int)drinkno];
+        setContentView(R.layout.activity_food);
+        long foodno=(int)(getIntent().getExtras().get(EXTRA_FOODNO));
+        Food food=Food.foods[(int)foodno];
         ImageView photo= (ImageView) findViewById(R.id.imageView2);
         TextView name= (TextView) findViewById(R.id.name);
         TextView description=(TextView)findViewById(R.id.description);
-        photo.setImageResource(drink.getImageResourceId());
-        name.setText(drink.getName());
-        description.setText(drink.getDescription());
-
+        photo.setImageResource(food.getImageResourceId());
+        name.setText(food.getName());
+        description.setText(food.getDescription());
     }
 }
